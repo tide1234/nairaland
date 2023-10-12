@@ -13,7 +13,7 @@ console.log(contents);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/getarticles/")
+      .get("https://otide.pythonanywhere.com/getarticles/")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);

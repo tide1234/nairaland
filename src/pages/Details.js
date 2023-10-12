@@ -9,7 +9,7 @@ function Details() {
   const {id} = useParams()
 
   useEffect(()=>{
-    axios.get(`http://localhost:8000/getarticle/${id}`)
+    axios.get(`https://otide.pythonanywhere.com/getarticle/${id}`)
     .then((res)=> setDetail(res.data))
     .catch((err)=>console.log(err))
   }, [id])
@@ -20,8 +20,8 @@ function Details() {
      <div>
       <h1 className='text-center'>{detail?.title}</h1>
       <p className='text-primary fst-italic' dangerouslySetInnerHTML={{__html: detail?.descriptiion}}></p>
-       <img src={`http://localhost:8000/${detail?.image}`} alt={detail?.title} />
-       <img src={`http://localhost:8000/${detail?.other}`} alt={detail?.title} />
+       <img src={`https://otide.pythonanywhere.com/${detail?.image}`} alt={detail?.title} />
+       <img src={`https://otide.pythonanywhere.com/${detail?.other}`} alt={detail?.title} />
      </div>
   )
 }
